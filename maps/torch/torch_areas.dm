@@ -747,10 +747,6 @@
 	name = "\improper Unused Chapel"
 	icon_state = "chapel"
 
-/area/vacant/infirmary
-	name = "\improper Auxiliary Infirmary"
-	icon_state = "medbay"
-
 /area/vacant/prototype
 	req_access = list(access_engine)
 
@@ -1206,14 +1202,6 @@
 	ambience = list()
 	sound_env = MEDIUM_SOFTFLOOR
 
-/area/bridge/disciplinary_board_room
-	name = "\improper Disciplinary Board Room"
-	sound_env = SMALL_ENCLOSED
-
-/area/bridge/disciplinary_board_room/deliberation
-	name = "\improper Deliberation Room"
-	sound_env = SMALL_ENCLOSED
-
 /area/crew_quarters/heads
 	icon_state = "head_quarters"
 	req_access = list(access_heads)
@@ -1231,6 +1219,13 @@
 	has_gravity = FALSE
 	turf_initializer = /decl/turf_initializer/maintenance/space
 	req_access = list(access_external_airlocks, access_maint_tunnels)
+
+/area/crew_quarters_boh/cabin_main/officerbunk
+	name = "\improper Officer Quarters"
+	icon_state = "Sleep"
+	req_access = list(access_bridge)
+	sound_env = SMALL_SOFTFLOOR
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 // CentCom
 
@@ -1297,6 +1292,10 @@
 
 /area/maintenance/waterstore
 	name = "\improper Cistern"
+	icon_state = "disposal"
+
+/area/maintenance/aux_med
+	name = "\improper Aux. Medical"
 	icon_state = "disposal"
 
 // Storage
@@ -1753,15 +1752,8 @@
 	name = "\improper Cabin Janitorial"
 	icon_state = "janitor"
 
-//vip
-/area/crew_quarters_boh/cabin_main/vip
-	name = "\improper VIP Cabin"
-	icon_state = "Sleep"
-	req_access = list(access_captain)
-
-/area/crew_quarters_boh/cabin_main/officerbunk
-	name = "\improper Officer Quarters"
-	icon_state = "Sleep"
-	req_access = list(access_bridge)
-	sound_env = SMALL_SOFTFLOOR
-	area_flags = AREA_FLAG_RAD_SHIELDED
+//Foundation Advisor
+/area/crew_quarters/heads/office/psiadvisor
+	name = "\improper Foundation Advisor"
+	icon_state = "heads"
+	req_access = list(access_psiadvisor)

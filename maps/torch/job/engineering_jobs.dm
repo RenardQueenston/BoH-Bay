@@ -55,14 +55,15 @@
 	supervisors = "the Chief Engineer"
 	economic_power = 5
 	minimal_player_age = 0
-	minimum_character_age = list(SPECIES_HUMAN = 19)
+	minimum_character_age = list(SPECIES_HUMAN = 24)
 	alt_titles = list(
 		"Engine Technician",
 		"Damage Control Technician",
 		"Electrician",
 		"Atmospheric Technician",
 		"EVA Technician",
-		"Telecommunications Technician"
+		"Telecommunications Technician",
+		"Life Support Technician"
 		)
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/engineering/engineer
 	allowed_branches = list(

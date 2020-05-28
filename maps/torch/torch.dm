@@ -69,6 +69,7 @@
 	#include "items/solbanner.dm"
 	#include "items/explo_shotgun.dm"
 	#include "items/mecha.dm"
+	#include "items/rewards.dm"
 
 	#include "items/clothing/ec_skillbadges.dm"
 	#include "items/clothing/solgov-accessory.dm"
@@ -87,6 +88,8 @@
 	#include "items/clothing/boh_under.dm"
 	#include "items/clothing/boh_accessory.dm"
 	#include "items/clothing/boh_clothing.dm"
+
+	#include "items/psyker/agent_items.dm"
 
 	#include "items/weapon/storage/wallets.dm"
 

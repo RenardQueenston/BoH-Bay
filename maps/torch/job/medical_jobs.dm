@@ -54,7 +54,8 @@
 	minimal_player_age = 0
 	alt_titles = list(
 		"Paramedic",
-		"Corpsman")
+		"Corpsman",
+		"Nurse")
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/medical/doctor
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
@@ -86,7 +87,7 @@
 	skill_points = 22
 
 /datum/job/medical_trainee
-	title = "Trainee Medical Technician"
+	title = "Medical Trainee"
 	department = "Medical"
 	department_flag = MED
 	total_positions = 1
@@ -95,13 +96,16 @@
 	selection_color = "#013d3b"
 	minimum_character_age = list(SPECIES_HUMAN = 18)
 	alt_titles = list(
-		"Corpsman Trainee")
+		"Trainee Medical Technician",
+		"Corpsman Trainee",
+		"Trainee Nurse")
 
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/medical/doctor
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
 		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/medical/doctor/fleet
 	)
+
 	allowed_ranks = list(
 		/datum/mil_rank/ec/e3,
 		/datum/mil_rank/fleet/e2
@@ -166,9 +170,6 @@
 	minimal_player_age = 0
 	supervisors = "the Chief Medical Officer"
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/medical/counselor
-	alt_titles = list(
-		"Mentalist" = /decl/hierarchy/outfit/job/torch/crew/medical/counselor/mentalist
-	)
 
 	allowed_branches = list(
 		/datum/mil_branch/civilian,
@@ -191,15 +192,26 @@
 		/datum/computer_file/program/suit_sensors,
 		/datum/computer_file/program/camera_monitor
 	)
-	give_psionic_implant_on_join = FALSE
+
+	alt_titles = list(
+		"Psychiatrist",
+		"Psionic Psychiatrist" = /decl/hierarchy/outfit/job/torch/crew/medical/counselor/mentalist,
+		"Mentalist" = /decl/hierarchy/outfit/job/torch/crew/medical/counselor/mentalist
+
+	)
+
+/datum/job/psychiatrist/get_description_blurb()
+	return "You are the Psychiatrist. Your main responsibility is the mental health and wellbeing of the crew. You are subordinate to the Chief Medical Officer. Additionally, alongside the Psionic Advisor, you're the only member aboard with known Psionic abilities."
 
 /datum/job/psychiatrist/equip(var/mob/living/carbon/human/H)
-	if(H.mind.role_alt_title == "Counselor")
+	psi_faculties = list("[PSI_COERCION]" = PSI_RANK_OPERANT)
+	return ..()
+
+/datum/job/psychiatrist/equip(var/mob/living/carbon/human/H)
+	if(H.mind.role_alt_title == "Psychiatrist")
+		psi_faculties = list("[PSI_REDACTION]" = PSI_RANK_OPERANT)
+	if(H.mind.role_alt_title == "Psionic Psychiatrist")
 		psi_faculties = list("[PSI_REDACTION]" = PSI_RANK_OPERANT)
 	if(H.mind.role_alt_title == "Mentalist")
 		psi_faculties = list("[PSI_COERCION]" = PSI_RANK_OPERANT)
 	return ..()
-
-
-/datum/job/psychiatrist/get_description_blurb()
-	return "You are the Counselor. You are psionically awakened, part of a tiny minority, and you are the first and only exposure most of the crew will have to the mentally gifted. Your main responsibility is the mental health and wellbeing of the crew. You are subordinate to the Chief Medical Officer."

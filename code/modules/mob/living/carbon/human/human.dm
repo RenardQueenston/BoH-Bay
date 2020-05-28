@@ -838,7 +838,7 @@
 	var/list/creatures = list()
 	for(var/mob/living/carbon/h in world)
 		creatures += h
-	var/mob/target = input("Who do you want to project your mind to ?") as null|anything in creatures
+	var/mob/target = input("Who do you want to project your mind to?") as null|anything in creatures
 	if (isnull(target))
 		return
 
@@ -1076,27 +1076,6 @@
 		to_chat(usr, message)
 	else
 		to_chat(usr, "<span class='warning'>You failed to check the pulse. Try again.</span>")
-
-/mob/living/carbon/human/verb/lookup()
-	set name = "Look up"
-	set desc = "If you want to know what's above."
-	set category = "IC"
-
-	if(!is_physically_disabled())
-		var/turf/above = GetAbove(src)
-		if(bound_overlay)
-			if(client.eye == bound_overlay)
-				reset_view(0)
-				return
-			if(istype(above, /turf/simulated/open))
-				to_chat(src, "<span class='notice'>You look up.</span>")
-				if(client)
-					reset_view(bound_overlay)
-				return
-		to_chat(src, "<span class='notice'>You can see \the [above].</span>")
-	else
-		to_chat(src, "<span class='notice'>You can't look up right now.</span>")
-	return
 
 /mob/living/carbon/human/proc/set_species(var/new_species, var/default_colour = 1)
 	if(!dna)
@@ -1451,8 +1430,8 @@
 	for(var/limb in organs_by_name)
 		var/obj/item/organ/external/current_limb = organs_by_name[limb]
 		if(current_limb && current_limb.dislocated > 0 && !current_limb.is_parent_dislocated()) //if the parent is also dislocated you will have to relocate that first
-			limbs |= current_limb
-	var/obj/item/organ/external/current_limb = input(usr,"Which joint do you wish to relocate?") as null|anything in limbs
+			limbs[current_limb] = current_limb
+	var/obj/item/organ/external/current_limb = show_radial_menu(U, S, limbs)
 
 	if(!current_limb)
 		return

@@ -56,7 +56,6 @@
 	display_name = "NTSS Dagon mission patch"
 	path = /obj/item/clothing/accessory/solgov/torch_patch
 	description = "A shoulder patch representing the NTSS Dagon and its mission. Given to all the oddjobs pulled from various branches to work on the Dagon."
-	flags = GEAR_HAS_CUSTOM_SELECTION
 
 /datum/gear/accessory/pilot_pin
 	display_name = "pilot's qualification pin"
@@ -71,8 +70,13 @@
 	allowed_branches = list(/datum/mil_branch/fleet)
 
 /datum/gear/accessory/armband_ma
-	display_name = "master at arms brassard"
+	display_name = "master-at-arms brassard"
 	path = /obj/item/clothing/accessory/armband/solgov/ma
+	allowed_roles = SECURITY_ROLES
+
+/datum/gear/accessory/armband_mp
+	display_name = "military police brassard"
+	path = /obj/item/clothing/accessory/armband/solgov/mp
 	allowed_roles = SECURITY_ROLES
 
 /datum/gear/accessory/armband_security
@@ -156,7 +160,6 @@
 
 /datum/gear/clothing/scarf
 	allowed_roles = SEMIANDFORMAL_ROLES
-	allowed_branches = CASUAL_BRANCHES
 
 /datum/gear/clothing/flannel
 	allowed_roles = SEMIFORMAL_ROLES

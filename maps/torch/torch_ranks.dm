@@ -44,23 +44,16 @@
 		/datum/species/unathi     = list(/datum/mil_branch/civilian, /datum/mil_branch/expeditionary_corps),
 		/datum/species/adherent   = list(/datum/mil_branch/civilian, /datum/mil_branch/expeditionary_corps),
 		/datum/species/sergal     = list(/datum/mil_branch/civilian, /datum/mil_branch/expeditionary_corps),
-		/datum/species/akula     = list(/datum/mil_branch/civilian, /datum/mil_branch/expeditionary_corps),
+		/datum/species/akula     = list(/datum/mil_branch/civilian, /datum/mil_branch/expeditionary_corps, /datum/mil_branch/solgov),
 		/datum/species/custom      = list(/datum/mil_branch/civilian, /datum/mil_branch/expeditionary_corps),
 		/datum/species/humanathi      = list(/datum/mil_branch/civilian, /datum/mil_branch/expeditionary_corps),
 		/datum/species/tajaran      = list(/datum/mil_branch/civilian, /datum/mil_branch/expeditionary_corps),
 		/datum/species/vasilissan      = list(/datum/mil_branch/civilian, /datum/mil_branch/expeditionary_corps),
-		/datum/species/vulpkanin      = list(/datum/mil_branch/civilian, /datum/mil_branch/expeditionary_corps),
-		/datum/species/customhuman      = list(/datum/mil_branch/civilian, /datum/mil_branch/expeditionary_corps),
+		/datum/species/vulpkanin      = list(/datum/mil_branch/civilian, /datum/mil_branch/expeditionary_corps, /datum/mil_branch/solgov),
+		/datum/species/customhuman      = list(/datum/mil_branch/civilian, /datum/mil_branch/expeditionary_corps, /datum/mil_branch/solgov),
 		//datum/species/tesh/  list(/datum/mil_branch/civilian, /datum/mil_branch/expeditionary_corps),
 		/datum/species/vox        = list(/datum/mil_branch/alien),
 		/datum/species/vox/armalis        = list(/datum/mil_branch/alien)
-	)
-	species_to_rank_blacklist = list(
-		/datum/species/machine = list(
-			/datum/mil_branch/solgov = list(
-				/datum/mil_rank/sol/agent
-			)
-		)
 	)
 /*
 	species_to_rank_whitelist = list(
@@ -237,6 +230,7 @@
 		/datum/mil_rank/civ/civ,
 		/datum/mil_rank/civ/contractor,
 		/datum/mil_rank/civ/ntr,
+		/datum/mil_rank/civ/foundationadvisor,
 		/datum/mil_rank/civ/synthetic
 	)
 
@@ -244,6 +238,7 @@
 		/datum/mil_rank/civ/civ,
 		/datum/mil_rank/civ/contractor,
 		/datum/mil_rank/civ/ntr,
+		/datum/mil_rank/civ/foundationadvisor,
 		/datum/mil_rank/civ/synthetic
 	)
 
@@ -721,6 +716,11 @@
 /datum/mil_rank/civ/ntr
 	name = "NanoTrasen Representative"
 	name_short = "NTR"
+	pow_cat = 5
+
+/datum/mil_rank/civ/foundationadvisor
+	name = "Psionic Advisor"
+	name_short = "PADV"
 	pow_cat = 5
 
 /datum/mil_rank/civ/synthetic

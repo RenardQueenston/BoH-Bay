@@ -4,6 +4,7 @@
 	department_flag = EXP
 	total_positions = 1
 	spawn_positions = 1
+	head_position = 1
 	supervisors = "the Chief Science Officer"
 	selection_color = "#68099e"
 	minimal_player_age = 4
@@ -27,7 +28,7 @@
 
 	access = list(
 		access_pathfinder, access_explorer, access_eva, access_maint_tunnels, access_bridge, access_emergency_storage,
-		access_guppy_helm, access_solgov_crew, access_expedition_shuttle, access_expedition_shuttle_helm,
+		access_guppy_helm, access_solgov_crew, access_expedition_shuttle, access_expedition_shuttle_helm, access_research,
 		access_guppy, access_hangar
 	)
 

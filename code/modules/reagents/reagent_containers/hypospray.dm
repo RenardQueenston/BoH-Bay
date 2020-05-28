@@ -119,6 +119,7 @@
 	desc = "A rapid and safe way to administer small amounts of drugs by untrained or trained personnel."
 	icon_state = "injector"
 	item_state = "autoinjector"
+	matter = list(MATERIAL_PLASTIC = 100, MATERIAL_GLASS = 50, MATERIAL_STEEL = 30)
 	amount_per_transfer_from_this = 5
 	volume = 5
 	origin_tech = list(TECH_MATERIAL = 2, TECH_BIO = 2)
@@ -193,4 +194,24 @@
 /obj/item/weapon/reagent_containers/hypospray/autoinjector/stim
 	name = "autoinjector (stims)"
 	band_color = COLOR_DARK_GRAY
-	reagents_to_add = list(/datum/reagent/tramadol/oxycodone = 10,/datum/reagent/inaprovaline = 5)
+	reagents_to_add = list(/datum/reagent/tramadol/oxycodone = 10, /datum/reagent/inaprovaline = 5)
+
+/obj/item/weapon/reagent_containers/hypospray/autoinjector/zerk
+	name = "autoinjector (zerk)"
+	band_color = COLOR_RED
+	reagents_to_add = list(/datum/reagent/synaptizine = 3, /datum/reagent/hyperzine = 12)
+
+/obj/item/weapon/reagent_containers/hypospray/autoinjector/hypeross
+	name = "autoinjector (HO7)"
+	band_color = COLOR_WHITE
+	reagents_to_add = list(/datum/reagent/hypeross = 3)
+
+/obj/item/weapon/reagent_containers/hypospray/autoinjector/peridaxon
+	name = "autoinjector (peri)"
+	band_color = COLOR_PINK
+	reagents_to_add = list(/datum/reagent/peridaxon = 10)
+
+/obj/item/weapon/reagent_containers/hypospray/autoinjector/alkysine
+	name = "autoinjector (alky)"
+	band_color = COLOR_YELLOW
+	reagents_to_add = list(/datum/reagent/alkysine = 5)
